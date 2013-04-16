@@ -21,7 +21,6 @@
           if (ecnt) {
             $('#messages').remove();
             form.prepend("<div class='messages error'><ul><li>One or more required fields are empty.</li></ul></div>");
-            return false;
           }
         }
       });
