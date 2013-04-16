@@ -1,0 +1,7 @@
+name = "WAP"
+description = "Test."
+core = 7.x
+version = "7.x-1.0"
+package = "Work at Play"
+
+scripts[] = js/wap.js
