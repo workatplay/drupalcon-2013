@@ -1,4 +1,3 @@
-
 (function ($) {
   Drupal.behaviors.wapCommon = {};
   Drupal.behaviors.wapCommon.attach = function (context) {
