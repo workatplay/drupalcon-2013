@@ -4,4 +4,29 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-?>
+
+/**
+ * Implementation of hook_menu().
+ */
+function wap_menu() {
+  $items = array();
+  $items['admin/config/development/jasmine'] = array(
+    'title' => 'Jasmine Spec Runner',
+    'description' => 'Run Jasmine tests for the site.',
+    'page callback' => 'wap_jasmine',
+    'file' => 'wap.jasmine.inc',
+    'access arguments' => array('administer site configuration'),
+  );
+  return $items;
+}
+
+/**
+ * Implementation of hook_theme().
+ */
+function wap_theme() {
+  return array(
+    'jasmine_specrunner' => array(
+      'template' => 'wap.specrunner',
+    ),
+  );
+}
