@@ -12,6 +12,9 @@ function wap_jasmine() {
   // Dependencies: Javascript to be tested
   // TODO
   
+  // Helpers
+  drupal_add_js($wap_path . '/js/spec-helpers.js');
+  
   // Specs: Tests
   drupal_add_js($wap_path . '/js/spec/flowplayer.js');
   
