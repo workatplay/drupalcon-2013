@@ -1,50 +1,55 @@
 describe("Flow Player", function() {
-    it("should be able to play a Song", function() {
-        //player.play(song);
-        //expect(player.currentlyPlayingSong).toEqual(song);
-        //
-        ////demonstrates use of custom matcher
-        //expect(player).toBePlaying(song);
+    // get the first player
+    var player = flowplayer();
+
+    it("should be able to play a video", function() {
+        //player.play(video);
+        //expect(player.video).toEqual(video);
+        
+        //demonstrates use of custom matcher
+        //expect(player).toBePlaying();
     });
     
-    describe("when song has been paused", function() {
+    describe("when video has been paused", function() {
         beforeEach(function() {
-            //player.play(song);
+            //player.play(video);
             //player.pause();
         });
         
-        it("should indicate that the song is currently paused", function() {
-            //expect(player.isPlaying).toBeFalsy();
-            //
-            //// demonstrates use of 'not' with a custom matcher
-            //expect(player).not.toBePlaying(song);
+        it("should indicate that the video is currently paused", function() {
+            //expect(player.playing).toBeFalsy();
+            
+            // demonstrates use of 'not' with a custom matcher
+            //expect(player).not.toBePlaying();
         });
         
         it("should be possible to resume", function() {
             //player.resume();
-            //expect(player.isPlaying).toBeTruthy();
-            //expect(player.currentlyPlayingSong).toEqual(song);
+            //expect(player.playing).toBeTruthy();
+            //expect(player.video).toEqual(video);
         });
     });
     
     // demonstrates use of spies to intercept and test method calls
-    it("tells the current song if the user has made it a favorite", function() {
-        //spyOn(song, 'persistFavoriteStatus');
-        //
-        //player.play(song);
-        //player.makeFavorite();
-        //
-        //expect(song.persistFavoriteStatus).toHaveBeenCalledWith(true);
+    // TODO: change this to a different bind event for flowplayer
+    // maybe for seek, fullscreen, load, etc?
+    it("tells the current video if the user has made it a favorite", function() {
+        //spyOn(player, 'FUNCTION');
+        
+        //player.play(video);
+        //player.TODO
+        
+        //expect(song.TODO).toHaveBeenCalledWith(TODO);
     });
     
     //demonstrates use of expected exceptions
     describe("#resume", function() {
-        it("should throw an exception if song is already playing", function() {
-            //player.play(song);
-            //
+        it("should throw an exception if video is already playing", function() {
+            //player.play(video);
+            
             //expect(function() {
             //    player.resume();
-            //}).toThrow("song is already playing");
+            //}).toThrow("TODO");
         });
     });
 });

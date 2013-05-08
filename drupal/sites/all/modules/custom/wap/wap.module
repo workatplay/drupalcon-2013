@@ -26,6 +26,9 @@ function wap_menu() {
 function wap_theme() {
   return array(
     'jasmine_specrunner' => array(
+      'variables' => array(
+        'flowplayer' => null
+      ),
       'template' => 'wap.specrunner',
     ),
   );

@@ -1,3 +1,7 @@
+<!-- Flowplayer element -->
+<?php print $flowplayer; ?>
+<!-- END Flowplayer -->
+
 <script type="text/javascript">
   (function() {
     var jasmineEnv = jasmine.getEnv();
