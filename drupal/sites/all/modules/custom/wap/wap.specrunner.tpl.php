@@ -3,8 +3,9 @@
 <!-- END Flowplayer -->
 
 <script type="text/javascript">
+  var jasmineEnv = jasmine.getEnv();
+    
   (function() {
-    var jasmineEnv = jasmine.getEnv();
     jasmineEnv.updateInterval = 1000;
     
     var htmlReporter = new jasmine.HtmlReporter();
@@ -21,12 +22,12 @@
       if (currentWindowOnload) {
         currentWindowOnload();
       }
-      execJasmine();
     };
-    
-    function execJasmine() {
-      jasmineEnv.execute();
-    }
   
   })();
+  
+  // Called by flowplayer when done loading
+  function execJasmine() {
+    jasmineEnv.execute();
+  }
 </script>

@@ -2,6 +2,7 @@
 
 function wap_jasmine() {
   $wap_path = drupal_get_path('module', 'wap');
+  
   // CSS
   drupal_add_css($wap_path . '/jasmine/jasmine.css');
   
@@ -15,7 +16,7 @@ function wap_jasmine() {
       'url' => 'http://pseudo01.hddn.com/vod/demo.flowplayervod/flowplayer-700.flv',
       'autoPlay' => FALSE,
     ),
-    'onLoad' => 'flowplayerAdminInit',
+    'onLoad' => 'execJasmine', // start the tests after the player is loaded
   );
   $flowplayer = theme('flowplayer', array(
     'config'     => $flowplayer_config,

@@ -1,9 +1,9 @@
 beforeEach(function() {
   this.addMatchers({
-    toBePlaying: function(expectedSong) {
+    toBePlaying: function() {
       var player = this.actual;
-      return player.currentlyPlayingSong === expectedSong && 
-             player.isPlaying;
+      
+      return player.isPlaying();
     }
   });
 });
