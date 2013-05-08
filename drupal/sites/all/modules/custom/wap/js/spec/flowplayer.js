@@ -43,7 +43,9 @@ describe("Flow Player", function() {
     });
     
     //demonstrates use of expected exceptions
-    describe("#resume", function() {
+    describe("exceptions", function() {
+        // TODO: Change to a different exception if the below example isn't supported
+        // ie. Video file not found (Error code: 4)
         it("should throw an exception if video is already playing", function() {
             //player.play(video);
             
