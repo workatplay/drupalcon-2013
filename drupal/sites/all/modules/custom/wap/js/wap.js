@@ -1,3 +1,6 @@
+/**
+ * Caculator object
+ */
 var Calculator = function (_x, _y) {
   var x = 0;
   var y = 0;
@@ -5,6 +8,7 @@ var Calculator = function (_x, _y) {
   this.set = function (_x, _y) {
     x = parseFloat(_x);
     y = parseFloat(_y);
+    return this;
   }
   this.add = function () {
     return x+y;
@@ -35,6 +39,8 @@ var Calculator = function (_x, _y) {
   };
   
   this.set(_x,_y);
+  
+  return this;
 };
 
 (function ($) {
@@ -84,8 +90,7 @@ var Calculator = function (_x, _y) {
         var x = form.find('[name="x"]').val();
         var y = form.find('[name="y"]').val();
         var op = form.find('[name="op"]').val();
-        calculator.set(x,y);
-        form.find('[name="z"]').val(calculator.calculate(op));
+        form.find('[name="z"]').val(calculator.set(x,y).calculate(op)).fadeTo('fast', 0.3).fadeTo('fast', 1.0);
         return false;
       };
       form.on('submit', calculate).find('input,select').on('change', calculate);
