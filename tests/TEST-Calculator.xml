@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-<testsuite name="Calculator" errors="0" tests="4" failures="0" time="0.022" timestamp="2013-05-09T15:00:49">
-  <testcase classname="Calculator" name="should be able to add two numbers together" time="0.02"></testcase>
-  <testcase classname="Calculator" name="should be able to subtract from a number" time="0.001"></testcase>
+<testsuite name="Calculator" errors="0" tests="4" failures="0" time="0.022" timestamp="2013-05-09T15:04:58">
+  <testcase classname="Calculator" name="should be able to add two numbers together" time="0.021"></testcase>
+  <testcase classname="Calculator" name="should be able to subtract from a number" time="0"></testcase>
   <testcase classname="Calculator" name="should be able to multiply two numbers" time="0"></testcase>
-  <testcase classname="Calculator" name="should be able to divide by a number" time="0"></testcase>
+  <testcase classname="Calculator" name="should be able to divide by a number" time="0.001"></testcase>
 </testsuite>
 </testsuites>
