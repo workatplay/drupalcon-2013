@@ -25,6 +25,14 @@ function wap_menu() {
     'type'            => MENU_CALLBACK,
     'file'            => 'wap.jasmine.inc',
   );
+  $items['jasminexml'] = array(
+    'title'           => 'Jasmine Spec Runner',
+    'description'     => 'Run Jasmine tests for the site.',
+    'page callback'   => 'wap_jasmine_xml',
+    'access callback' => TRUE,
+    'type'            => MENU_CALLBACK,
+    'file'            => 'wap.jasmine.inc',
+  );
   return $items;
 }
 
@@ -41,14 +49,26 @@ function wap_theme() {
     'template'  => 'wap.specrunner',
     'variables' => array()
   );
+  $themes['jasmine_specrunner_xml'] = array(
+    'template'  => 'templates/wap.specrunner.xml',
+    'variables' => array()
+  );
   
   // Theme overrides --------------
   $themes['page__jasmine'] = array(
-    'template'  => 'wap.page__jasmine',
+    'template'  => 'templates/wap.page__jasmine',
     'variables' => array()
   );
   $themes['html__jasmine'] = array(
-    'template'  => 'wap.html__jasmine',
+    'template'  => 'templates/wap.html__jasmine',
+    'variables' => array()
+  );
+  $themes['page__jasminexml'] = array(
+    'template'  => 'templates/wap.page__jasminexml',
+    'variables' => array()
+  );
+  $themes['html__jasminexml'] = array(
+    'template'  => 'templates/wap.html__jasminexml',
     'variables' => array()
   );
   return $themes;
