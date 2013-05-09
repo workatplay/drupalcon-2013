@@ -90,10 +90,13 @@ var Calculator = function (_x, _y) {
         var x = form.find('[name="x"]').val();
         var y = form.find('[name="y"]').val();
         var op = form.find('[name="op"]').val();
-        form.find('[name="z"]').val(calculator.set(x,y).calculate(op)).fadeTo('fast', 0.3).fadeTo('fast', 1.0);
+        var z = calculator.set(x,y).calculate(op);
+        form.find('[name="z"]').val(z).fadeTo('fast', 0.3).fadeTo('fast', 1.0);
+        form.trigger('calculated', [z]);
         return false;
       };
       form.on('submit', calculate).find('input,select').on('change', calculate);
+    }).on('calculated', function (e,data) {
     });
     
     $('form', context).submit(function () { // check for empty required fields
