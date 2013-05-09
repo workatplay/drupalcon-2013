@@ -1,7 +1,24 @@
 <?php
+function wap_menu() {
+  $items['calc'] = array(
+      'title' => 'Calculator',
+      'description' => 'Calculator',
+      'page callback' => 'wap_calc',
+      'access callback' => TRUE,
+      'type' => MENU_CALLBACK,
+  );
+  
+  return $items;
+}
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-?>
+function wap_calc() {
+  return theme('wap_calc');
+}
+
+function wap_theme($existing, $type, $theme, $path) {
+  $themes['wap_calc'] = array(
+      'template' => 'wap_calc',
+      'variables' => array(),
+  );
+  return $themes;
+}

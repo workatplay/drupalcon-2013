@@ -1,3 +1,42 @@
+var Calculator = function (_x, _y) {
+  var x = 0;
+  var y = 0;
+  
+  this.set = function (_x, _y) {
+    x = parseFloat(_x);
+    y = parseFloat(_y);
+  }
+  this.add = function () {
+    return x+y;
+  };
+  this.subtract = function () {
+    return x-y;
+  };
+  this.multiply = function () {
+    return x*y;
+  };
+  this.divide = function () {
+    if (y == 0) {
+      return undefined;
+    }
+    return x/y;
+  };
+  this.calculate = function (symbol) {
+    if (symbol == '+') {
+      return this.add();
+    } else if (symbol == '-') {
+      return this.subtract();
+    } else if (symbol == '*') {
+      return this.multiply();
+    } else if (symbol == '/') {
+      return this.divide();
+    }
+    return undefined;
+  };
+  
+  this.set(_x,_y);
+};
+
 (function ($) {
   var checkFormError = function (form) {
     var ecnt = 0;
@@ -38,6 +77,19 @@
         
   Drupal.behaviors.wapCommon = {};
   Drupal.behaviors.wapCommon.attach = function (context) {
+    $('.calc', context).each(function () {
+      var form = $(this);
+      var calculator = new Calculator();
+      var calculate = function () {        
+        var x = form.find('[name="x"]').val();
+        var y = form.find('[name="y"]').val();
+        var op = form.find('[name="op"]').val();
+        calculator.set(x,y);
+        form.find('[name="z"]').val(calculator.calculate(op));
+        return false;
+      };
+      form.on('submit', calculate).find('input,select').on('change', calculate);
+    });
     
     $('form', context).submit(function () { // check for empty required fields
       return checkFormError($(this));
