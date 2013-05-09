@@ -1,5 +1,15 @@
 <?php
+
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ * Implementation of hook_menu().
+ */
 function wap_menu() {
+  $items = array();
   $items['calc'] = array(
       'title' => 'Calculator',
       'description' => 'Calculator',
@@ -7,18 +17,33 @@ function wap_menu() {
       'access callback' => TRUE,
       'type' => MENU_CALLBACK,
   );
-  
+  $items['admin/config/development/jasmine'] = array(
+    'title' => 'Jasmine Spec Runner',
+    'description' => 'Run Jasmine tests for the site.',
+    'page callback' => 'wap_jasmine',
+    'file' => 'wap.jasmine.inc',
+    'access arguments' => array('administer site configuration'),
+  );
   return $items;
 }
 
-function wap_calc() {
-  return theme('wap_calc');
-}
-
-function wap_theme($existing, $type, $theme, $path) {
+/**
+ * Implementation of hook_theme().
+ */
+function wap_theme() {
+  $themes['jasmine_specrunner'] = array(
+      'variables' => array(
+        'flowplayer' => null
+      ),
+      'template' => 'wap.specrunner',
+    );
   $themes['wap_calc'] = array(
       'template' => 'wap_calc',
       'variables' => array(),
   );
   return $themes;
+}
+
+function wap_calc() {
+  return theme('wap_calc');
 }
