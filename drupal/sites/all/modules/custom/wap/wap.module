@@ -11,35 +11,45 @@
 function wap_menu() {
   $items = array();
   $items['calc'] = array(
-      'title' => 'Calculator',
-      'description' => 'Calculator',
-      'page callback' => 'wap_calc',
+      'title'           => 'Calculator',
+      'description'     => 'Calculator',
+      'page callback'   => 'wap_calc',
       'access callback' => TRUE,
-      'type' => MENU_CALLBACK,
+      'type'            => MENU_CALLBACK,
   );
-  $items['admin/config/development/jasmine'] = array(
-    'title' => 'Jasmine Spec Runner',
-    'description' => 'Run Jasmine tests for the site.',
-    'page callback' => 'wap_jasmine',
-    'file' => 'wap.jasmine.inc',
-    'access arguments' => array('administer site configuration'),
+  $items['jasmine'] = array(
+    'title'           => 'Jasmine Spec Runner',
+    'description'     => 'Run Jasmine tests for the site.',
+    'page callback'   => 'wap_jasmine',
+    'access callback' => TRUE,
+    'type'            => MENU_CALLBACK,
+    'file'            => 'wap.jasmine.inc',
   );
   return $items;
 }
+
 
 /**
  * Implementation of hook_theme().
  */
 function wap_theme() {
-  $themes['jasmine_specrunner'] = array(
-      'variables' => array(
-        'flowplayer' => null
-      ),
-      'template' => 'wap.specrunner',
-    );
   $themes['wap_calc'] = array(
-      'template' => 'wap_calc',
-      'variables' => array(),
+      'template'  => 'wap_calc',
+      'variables' => array()
+  );
+  $themes['jasmine_specrunner'] = array(
+    'template'  => 'wap.specrunner',
+    'variables' => array()
+  );
+  
+  // Theme overrides --------------
+  $themes['page__jasmine'] = array(
+    'template'  => 'wap.page__jasmine',
+    'variables' => array()
+  );
+  $themes['html__jasmine'] = array(
+    'template'  => 'wap.html__jasmine',
+    'variables' => array()
   );
   return $themes;
 }

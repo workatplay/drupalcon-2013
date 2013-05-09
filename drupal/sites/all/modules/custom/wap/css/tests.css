@@ -1,0 +1,12 @@
+.page-jasmine #page-wrapper {
+    min-height: 0;
+}
+
+.page-jasmine #HTMLReporter {
+    position: relative;
+    top: -200px;
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+}

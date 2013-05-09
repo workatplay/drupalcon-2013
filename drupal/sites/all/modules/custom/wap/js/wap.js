@@ -96,7 +96,6 @@ var Calculator = function (_x, _y) {
         return false;
       };
       form.on('submit', calculate).find('input,select').on('change', calculate);
-    }).on('calculated', function (e,data) {
     });
     
     $('form', context).submit(function () { // check for empty required fields
