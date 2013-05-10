@@ -12,8 +12,7 @@ describe("Calculator", function() {
     calculator.set(x, y);
     var z = calculator.calculate('+');
         
-    expect(z).toEqual(25);
-        
+    expect(z).toEqual(25);        
   });
     
     
@@ -61,7 +60,6 @@ describe("Calculator", function() {
       var z = calculator.calculate('+');
 
       expect(calculator.add).toHaveBeenCalled();
-
     });
   });
     
