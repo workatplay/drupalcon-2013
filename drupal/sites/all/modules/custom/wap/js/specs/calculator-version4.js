@@ -50,14 +50,10 @@ describe("Calculator", function() {
     });
     
     describe("Spies", function() {
-      
-      beforeEach(function() {
-        spyOn(calculator, 'add');
-      });
-      
-      
           
       it("should be able to call add() from calculate()", function() {
+          spyOn(calculator, 'add');
+        
           var x = 10;
           var y = 15;
 
