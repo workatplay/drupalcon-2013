@@ -18,7 +18,7 @@ function wap_jasmine() {
   drupal_add_js($wap_path . '/js/spec-helpers.js');
   
   // Specs: Tests
-  drupal_add_js($wap_path . '/js/specs/calculator-version3.js');
+  drupal_add_js($wap_path . '/js/specs/calculator-version4.js');
   
   return theme('jasmine_specrunner');
 }

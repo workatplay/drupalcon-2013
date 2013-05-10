@@ -3,8 +3,6 @@ describe("Calculator", function() {
     
     beforeEach(function() {
         calculator = new Calculator();
-        
-        //spyOn(calculator, 'add'); // TODO: Does not work
     });
     
     it("should be able to add two numbers together", function() {
@@ -14,9 +12,8 @@ describe("Calculator", function() {
         calculator.set(x, y);
         var z = calculator.calculate('+');
         
-        //expect(calculator.add).toHaveBeenCalled(); // TODO: Does not work
-        
         expect(z).toEqual(25);
+        
     });
     
     
@@ -50,6 +47,26 @@ describe("Calculator", function() {
         var z = calculator.calculate('/');
         
         expect(z).toEqual(5);
+    });
+    
+    describe("Spies", function() {
+      
+      beforeEach(function() {
+        spyOn(calculator, 'add');
+      });
+      
+      
+          
+      it("should be able to call add() from calculate()", function() {
+          var x = 10;
+          var y = 15;
+
+          calculator.set(x, y);
+          var z = calculator.calculate('+');
+
+          expect(calculator.add).toHaveBeenCalled();
+
+      });
     });
     
 });
