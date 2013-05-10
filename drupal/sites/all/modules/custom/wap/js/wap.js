@@ -4,12 +4,11 @@
 var Calculator = function (_x, _y) {
   var x = 0;
   var y = 0;
-  
   this.set = function (_x, _y) {
     x = parseFloat(_x);
     y = parseFloat(_y);
     return this;
-  }
+  };
   this.add = function () {
     return x+y;
   };
@@ -36,11 +35,8 @@ var Calculator = function (_x, _y) {
       return this.divide();
     }
     return undefined;
-  };
-  
+  };  
   this.set(_x,_y);
-  
-  return this;
 };
 
 (function ($) {
