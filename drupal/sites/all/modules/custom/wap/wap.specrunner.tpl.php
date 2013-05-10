@@ -1,3 +1,7 @@
+<?php 
+  print theme('wap_calc');
+?>
+
 <script type="text/javascript">
   (function() {
     var jasmineEnv = jasmine.getEnv();
