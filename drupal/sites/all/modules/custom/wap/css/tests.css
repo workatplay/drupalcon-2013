@@ -1,12 +1,31 @@
+body {
+    background-color: white;
+}
+
 .page-jasmine #page-wrapper {
     min-height: 0;
 }
 
 .page-jasmine #HTMLReporter {
     position: relative;
-    top: -200px;
-    width: 960px;
+    top: -115px;
+    width: 930px;
     margin-left: auto;
     margin-right: auto;
     background-color: white;
+}
+
+.page-jasmine .banner .title {
+    font-size: 11px;
+    font-family: Monaco, "Lucida Console", monospace;
+    line-height: 14px;
+    color: #333333;
+}
+
+.page-jasmine #HTMLReporter, #content .region-content {
+    border-top: dashed #aaaaaa 1px;
+}
+
+#content .banner {
+    margin-bottom: 5px;
 }

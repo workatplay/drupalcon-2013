@@ -18,7 +18,7 @@
         
       expect(z).toEqual(25);        
     });
-    //...
+    
     it("should be able to subtract from a number", function() {
       var x = 10;
       var y = 3;
@@ -38,7 +38,6 @@
         
       expect(z).toEqual(30);
     });
-    //...  
     
     it("should be able to divide by a number", function() {
       var x = 60;
@@ -49,8 +48,9 @@
         
       expect(z).toEqual(5);
     });
-    //..
-    describe("Spies", function() {     
+    
+    describe("Spies", function() {
+        
       it("should be able to call add() from calculate()", function() {
         spyOn(calculator, 'add');
         
@@ -62,13 +62,16 @@
 
         expect(calculator.add).toHaveBeenCalled();
       });
+      
     });
-    //...
+    
     describe("DOM", function() {     
       var form;
+      
       beforeEach(function() {
         form = $('form.calc');
-      });      
+      });
+      
       it("should be able to add two numbers together via the form", function() {
         var x = 10;
         var y = 15;
@@ -76,15 +79,17 @@
         form.find('[name="x"]').val(x);
         form.find('[name="y"]').val(y);
         form.find('[name="op"]').val('+').trigger('change');
+        console.log('form', form, form.find('[name="z"]'), form.find('[name="z"]').val());
         var z = form.find('[name="z"]').val();
         expect(parseInt(z)).toEqual(25);        
       });
+      
       afterEach(function() {
         form.find('[name="x"]').val(0);
         form.find('[name="y"]').val(0);
-      });      
+      });
+      
     });
-    //...
   
   });
 })(jQuery);

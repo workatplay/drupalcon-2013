@@ -1,3 +1,6 @@
+<div class="banner">
+  <span class="title">Calculator</span>
+</div>
 <?php 
   print theme('wap_calc');
 ?>
