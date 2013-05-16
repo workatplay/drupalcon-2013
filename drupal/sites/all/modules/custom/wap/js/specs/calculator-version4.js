@@ -79,7 +79,7 @@
         form.find('[name="x"]').val(x);
         form.find('[name="y"]').val(y);
         form.find('[name="op"]').val('+').trigger('change');
-        console.log('form', form, form.find('[name="z"]'), form.find('[name="z"]').val());
+        
         var z = form.find('[name="z"]').val();
         expect(parseInt(z)).toEqual(25);        
       });
