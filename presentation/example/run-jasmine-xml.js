@@ -42,7 +42,7 @@ function waitFor(testFx, onReady, timeOutMillis) {
 
 
 if (system.args.length !== 3) {
-    console.log('Usage: phantomjs-jasminexml-runner.js HTML_RUNNER RESULT_DIR');
+    console.log('Usage: run-jasmine-xml.js specrunner-xml.html RESULT_DIR');
     phantom.exit(1);
 }
 
