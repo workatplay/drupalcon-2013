@@ -31,6 +31,7 @@ Files and Folders to take note of:
     > the PhantomJs script to run basic jasmine tests
 
 To run tests:
+
     phantomjs run-jasmine-basic.js specrunner-basic.html
 
 PhantomJs + Jenkins integration
