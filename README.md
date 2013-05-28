@@ -12,4 +12,4 @@ Presentation
 Example files for presentation
 -------------
 
-View files at [presentation/example/](https://github.com/workatplay/drupalcon-2013/presentation/example)
+View files at [presentation/example/](https://github.com/workatplay/drupalcon-2013/tree/master/presentation/example)
